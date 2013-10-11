@@ -77,7 +77,6 @@ def main():
             try:
                 arguments = docopt(__doc__, version='Dewey %s' % VERSION)
             except:
-                import traceback; traceback.print_exc();
                 pass
     else:
         arguments = docopt(__doc__, version='Dewey %s' % VERSION)
@@ -95,7 +94,6 @@ def main():
                 else:
                     cmd.run_command(**arguments)
             except:
-                import traceback; traceback.print_exc();
                 print "Unable to find a command module for %s" % arg_name
 
 if __name__ == '__main__':
