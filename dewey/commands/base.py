@@ -10,11 +10,29 @@ class DeweyCommand(object):
         if not self.platform:
             raise OSError("echo 'Dewey doesn't know your operating system. Sorry!'")
         if self.platform == "Windows":
-            self.pre_windows(*args, **kwargs)
+            try:
+                ret = self.pre_windows(*args, **kwargs)
+                if ret:
+                    return ret
+            except:
+                pass
+            return ""
         elif self.platform == "MacOSX":
-            self.pre_macosx(*args, **kwargs)
+            try:
+                ret = self.pre_macosx(*args, **kwargs)
+                if ret:
+                    return ret
+            except:
+                pass
+            return ""
         elif self.platform == "Linux":
-            self.pre_unix(*args, **kwargs)
+            try:
+                ret = self.pre_unix(*args, **kwargs)
+                if ret:
+                    return ret
+            except:
+                pass
+            return ""
         else:
             raise OSError("echo 'Dewey doesn't know how to run pre for %s'" % self.platform)
 
@@ -38,11 +56,29 @@ class DeweyCommand(object):
         if not self.platform:
             raise OSError("echo 'Dewey doesn't know your operating system. Sorry!'")
         if self.platform == "Windows":
-            self.post_windows(*args, **kwargs)
+            try:
+                ret = self.post_windows(*args, **kwargs)
+                if ret:
+                    return ret
+            except:
+                pass
+            return ""
         elif self.platform == "MacOSX":
-            self.post_macosx(*args, **kwargs)
+            try:
+                ret = self.post_macosx(*args, **kwargs)
+                if ret:
+                    return ret
+            except:
+                pass
+            return ""
         elif self.platform == "Linux":
-            self.post_unix(*args, **kwargs)
+            try:
+                ret = self.post_unix(*args, **kwargs)
+                if ret:
+                    return ret
+            except:
+                pass
+            return ""
         else:
             raise OSError("echo 'Dewey doesn't know how to run post for %s'" % self.platform)
 
