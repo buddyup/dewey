@@ -1,1 +1,2 @@
 docopt
+infi.docopt_completion
