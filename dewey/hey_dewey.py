@@ -4,10 +4,14 @@
 Usage:
   dewey status
   dewey hi
+  dewey --pre
+  dewey --post
 
 Options:
   -h --help     Show this screen.
   --version     Show version.
+  --pre         Output the pre-command scripts.
+  --post        Output the post-command scripts.
 
 """
 from docopt import docopt
