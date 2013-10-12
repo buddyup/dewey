@@ -36,17 +36,20 @@ class DeweyCommand(object):
         else:
             raise OSError("echo 'Dewey doesn't know how to run pre for %s'" % self.platform)
 
+    def pre_default(self, *args, **kwargs):
+        raise NotImplementedError("Pre-command not written!")
+
     def pre_windows(self, *args, **kwargs):
         """Returns a string to execute on windows"""
-        pass
+        return self.pre_all(self, *args, **kwargs)
 
     def pre_macosx(self, *args, **kwargs):
         """Returns a string to execute on Mac OS X"""
-        pass
+        return self.pre_all(self, *args, **kwargs)
 
     def pre_unix(self, *args, **kwargs):
         """Returns a string to execute on unix"""
-        pass
+        return self.pre_all(self, *args, **kwargs)
 
     def run_command(self, *args, **kwargs):
         """Runs the body of the command (should not have current shell side effects.)"""
@@ -82,14 +85,17 @@ class DeweyCommand(object):
         else:
             raise OSError("echo 'Dewey doesn't know how to run post for %s'" % self.platform)
 
+    def post_default(self, *args, **kwargs):
+        raise NotImplementedError("Post-command not written!")
+
     def post_windows(self, *args, **kwargs):
         """Returns a string to execute on windows"""
-        pass
+        return self.post_all(self, *args, **kwargs)
 
     def post_macosx(self, *args, **kwargs):
         """Returns a string to execute on Mac OS X"""
-        pass
+        return self.post_all(self, *args, **kwargs)
 
     def post_unix(self, *args, **kwargs):
         """Returns a string to execute on unix"""
-        pass
+        return self.post_all(self, *args, **kwargs)

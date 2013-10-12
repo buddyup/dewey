@@ -2,8 +2,9 @@
 """Dewey, our friendly CLI friend!
 
 Usage:
-  dewey status
   dewey workon <project_name>
+  dewey (checkout | co) <branch_name>
+  dewey (new-branch | nb) <branch_name>
   dewey hi
 
 Options:
@@ -83,6 +84,7 @@ def main():
     
     for arg_name, value in arguments.iteritems():
         if value == True:
+            arg_name = arg_name.replace("-", "_")
             try:
                 command_module = __import__("dewey.commands.%s" % arg_name, fromlist=['Command']) 
                 cmd = getattr(command_module, 'Command')()
