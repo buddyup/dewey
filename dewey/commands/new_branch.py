@@ -9,7 +9,8 @@ class Command(DeweyCommand):
 
     def run_command(self, *args, **kwargs):
         branch_name = kwargs["<branch_name>"]
-        failed = False
+
+        # Checkout master, check if it's behind, ask to pull
         cmd = "git log master..origin/master --oneline"
         output = subprocess.check_output(cmd, shell=True, )
         if output == "":
@@ -17,7 +18,7 @@ class Command(DeweyCommand):
         else:
             print "Master is behind. Update it?"
 
-        # Checkout master, check if it's behind, ask to pull
+        
         # Start a new branch called feature/foo 
         #   (parse out feature/ if it's in the branch name)
         # Set remote origin
