@@ -5,6 +5,7 @@ Usage:
   dewey workon <project_name>
   dewey (checkout | co) <branch_name>
   dewey (new-branch | nb) <branch_name>
+  dewey pep8
   dewey hi
 
 Options:
