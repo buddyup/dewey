@@ -1,6 +1,19 @@
+import pickle
+
+from clint import resources
+
 VALID_PLATFORMS = ["Windows", "MacOSX", "Linux"]
 
+
 class DeweyCommand(object):
+
+    def __init__(self):
+        resources.init('GreenKahuna', 'dewey')
+        brain_pickle = resources.user.read('config.py')
+        self.brain = pickle.load(brain_pickle)
+
+    def save(self):
+        resources.user.read('config.py', pickle.dump(self.brain))
 
     def set_platform(self, platform):
         assert platform in VALID_PLATFORMS
