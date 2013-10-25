@@ -1,4 +1,4 @@
-
+cd ~
 docopt-completion hey_dewey --manual-bash > /dev/null
 mv hey_dewey.sh .dewey_autocomplete.sh
 

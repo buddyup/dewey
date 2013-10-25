@@ -6,7 +6,9 @@ Dewey makes life easier on the command line.
 ## Installing
 
 ```
-pip install dewey
-./bin/bootstrap_dewey.sh
+pip install git+https://git@github.com/greenkahuna/dewey.git#egg=dewey
+
+# Find the path
+source {path_to_lib}/bin/bootstrap_dewey.sh
 ```
 
