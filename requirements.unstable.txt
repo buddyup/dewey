@@ -1,3 +1,4 @@
 clint
+pyyaml
 docopt
 infi.docopt_completion
