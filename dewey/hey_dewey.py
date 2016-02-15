@@ -7,6 +7,9 @@ Usage:
   dewey (new-branch | nb) <branch_name>
   dewey pep8
   dewey hi
+  dewey up
+  dewey upgrade
+  dewey bootstrap
 
 Options:
   -h --help     Show this screen.
