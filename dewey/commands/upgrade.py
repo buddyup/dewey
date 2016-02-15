@@ -7,7 +7,7 @@ class Command(DeweyCommand):
         pass
 
     def run_command(self, *args, **kwargs):
-        return "pip install git+https://git@github.com/buddyup/dewey.git#egg=dewey --upgrade"
+        print("pip install git+https://git@github.com/buddyup/dewey.git#egg=dewey --upgrade")
 
     def post_default(self, *args, **kwargs):
         pass

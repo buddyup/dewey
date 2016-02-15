@@ -1,4 +1,9 @@
+import subprocess
+from clint.textui import puts, indent, colored
+
 from .base import DeweyCommand
+from dewey.util import suppress_stdout_stderr
+
 
 
 class Command(DeweyCommand):
@@ -7,7 +12,7 @@ class Command(DeweyCommand):
         pass
 
     def run_command(self, *args, **kwargs):
-        return "docker-compose --project-name bu up"
+        print("docker-compose --project-name bu up")
 
     def post_default(self, *args, **kwargs):
         pass

@@ -1,4 +1,9 @@
+import subprocess
+from clint.textui import puts, indent, colored
+
 from .base import DeweyCommand
+from dewey.util import suppress_stdout_stderr
+
 
 
 class Command(DeweyCommand):
@@ -19,7 +24,7 @@ class Command(DeweyCommand):
         # Get the latest boot2docker
         output = subprocess.check_output("docker-machine upgrade default", shell=True, )
 
-        return "docker-osx-dev -e .git -e bower_components -e node_modules -e source"
+        print("docker-osx-dev -e .git -e bower_components -e node_modules -e source")
 
         # return "echo 'Ready for development'"
 
