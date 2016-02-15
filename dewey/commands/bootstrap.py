@@ -9,7 +9,7 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        return "cd ~/buddyup/core.git; docker-osx-dev -e .git -e bower_components -e node_modules -e source"
+        return "cd ~/buddyup/core.git ; docker-osx-dev -e .git -e bower_components -e node_modules -e source"
 
     def run_command(self, *args, **kwargs):
         # Base OSX Dev
