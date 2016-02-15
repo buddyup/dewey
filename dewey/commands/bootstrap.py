@@ -9,7 +9,7 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        pass
+        return "docker-osx-dev -e .git -e bower_components -e node_modules -e source"
 
     def run_command(self, *args, **kwargs):
         # Base OSX Dev
@@ -24,7 +24,7 @@ class Command(DeweyCommand):
         # Get the latest boot2docker
         output = subprocess.check_output("docker-machine upgrade default", shell=True, )
 
-        # return "echo 'Ready for development'"
+        print("Ready for development")
 
     def post_default(self, *args, **kwargs):
-        return "docker-osx-dev -e .git -e bower_components -e node_modules -e source"
+        pass
