@@ -10,6 +10,7 @@ Usage:
   dewey up
   dewey upgrade
   dewey bootstrap
+  dewey pull
 
 Options:
   -h --help     Show this screen.
