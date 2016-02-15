@@ -12,7 +12,7 @@ class Brain(object):
 class DeweyCommand(object):
 
     def __init__(self):
-        resources.init('GreenKahuna', 'dewey')
+        resources.init('BuddyUp', 'dewey')
         brain_pickle = resources.user.read('config.py')
         if brain_pickle:
             self.brain = pickle.load(brain_pickle)

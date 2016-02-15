@@ -12,9 +12,9 @@ with open('requirements.txt') as f:
 setup(
     name="dewey",
     description="A helpful CLI friend",
-    author="GreenKahuna",
-    author_email="steven@greenkahuna.com",
-    url="https://github.com/greenkahuna/dewey",
+    author="Steven Skoczen",
+    author_email="skoczen@gmail.com",
+    url="https://github.com/buddyup/dewey",
     version=VERSION,
     packages=find_packages(),
     install_requires=requirements,
