@@ -9,10 +9,10 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        pass
+        return "docker-compose --project-name bu up"
 
     def run_command(self, *args, **kwargs):
-        print("docker-compose --project-name bu up")
+        pass
 
     def post_default(self, *args, **kwargs):
         pass

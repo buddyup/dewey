@@ -24,9 +24,7 @@ class Command(DeweyCommand):
         # Get the latest boot2docker
         output = subprocess.check_output("docker-machine upgrade default", shell=True, )
 
-        print("docker-osx-dev -e .git -e bower_components -e node_modules -e source")
-
         # return "echo 'Ready for development'"
 
     def post_default(self, *args, **kwargs):
-        pass
+        return "docker-osx-dev -e .git -e bower_components -e node_modules -e source"

@@ -56,7 +56,7 @@ def main():
                 pass
     else:
         arguments = docopt(__doc__, version='Dewey %s' % VERSION)
-    
+
     for arg_name, value in arguments.iteritems():
         if value == True:
             arg_name = arg_name.replace("-", "_")
