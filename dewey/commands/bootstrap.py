@@ -33,4 +33,4 @@ class Command(DeweyCommand):
         print("Ready for development")
 
     def post_default(self, *args, **kwargs):
-        return "yes | docker-osx-dev -e .git -e bower_components -e node_modules -e source"
+        return "docker-osx-dev -e .git -e bower_components -e node_modules -e source"
