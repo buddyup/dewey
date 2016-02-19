@@ -31,7 +31,7 @@ class Command(DeweyCommand):
                 output = subprocess.check_output("docker run meltwater/docker-cleanup:latest -d --restart always -v /var/run/docker.sock:/var/run/docker.sock:rw -v /var/lib/docker:/var/lib/docker:rw", shell=True, )        
 
         # Get the latest boot2docker
-        output = subprocess.check_call("docker-machine upgrade default", shell=True, )
+        # output = subprocess.check_call("docker-machine upgrade default", shell=True, )
 
         print("Ready for development")
 

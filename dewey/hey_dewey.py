@@ -12,6 +12,7 @@ Usage:
   dewey bootstrap
   dewey pull
   dewey restart
+  dewey bash
 
 Options:
   -h --help     Show this screen.
