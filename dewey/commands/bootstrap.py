@@ -16,13 +16,17 @@ class Command(DeweyCommand):
         # output = subprocess.check_output("docker-osx-dev", shell=True, )
 
         # Dev DNS
-        output = subprocess.check_output("docker run -d --name devdns -p 53:53/udp -v /var/run/docker.sock:/var/run/docker.sock ruudud/devdns --restart always", shell=True, )
+        output = subprocess.check_call("docker run -d --name devdns -p 53:53/udp -v /var/run/docker.sock:/var/run/docker.sock ruudud/devdns --restart always", shell=True, )
+        if output != 1:
+            output = subprocess.check_call("docker run devdns -d -p 53:53/udp -v /var/run/docker.sock:/var/run/docker.sock ruudud/devdns --restart always", shell=True, )
 
         # Old image cleanup
-        output = subprocess.check_output("docker run -d --name cleanup --restart always -v /var/run/docker.sock:/var/run/docker.sock:rw -v /var/lib/docker:/var/lib/docker:rw meltwater/docker-cleanup:latest ", shell=True, )
+        output = subprocess.check_call("docker run -d --name cleanup --restart always -v /var/run/docker.sock:/var/run/docker.sock:rw -v /var/lib/docker:/var/lib/docker:rw meltwater/docker-cleanup:latest ", shell=True, )
+        if output != 1:
+            output = subprocess.check_call("docker run -d --restart always -v /var/run/docker.sock:/var/run/docker.sock:rw -v /var/lib/docker:/var/lib/docker:rw meltwater/docker-cleanup:latest ", shell=True, )        
 
         # Get the latest boot2docker
-        output = subprocess.check_output("docker-machine upgrade default", shell=True, )
+        output = subprocess.check_call("docker-machine upgrade default", shell=True, )
 
         print("Ready for development")
 
