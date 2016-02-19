@@ -11,6 +11,7 @@ Usage:
   dewey upgrade
   dewey bootstrap
   dewey pull
+  dewey restart
 
 Options:
   -h --help     Show this screen.
