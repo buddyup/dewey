@@ -17,11 +17,19 @@ class Command(DeweyCommand):
         running = subprocess.check_output("docker ps", shell=True)
 
         # Dev DNS
-        if "ruudud/devdns" not in running:
+        # if "ruudud/devdns" not in running:
+        #     try:
+        #         output = subprocess.check_output("docker run -d --name devdns -p 53:53/udp -v /var/run/docker.sock:/var/run/docker.sock ruudud/devdns --restart always", shell=True, )
+        #     except:
+        #        
+
+
+        # Dev DNS
+        if "dnsdock" not in running:
             try:
-                output = subprocess.check_output("docker run -d --name devdns -p 53:53/udp -v /var/run/docker.sock:/var/run/docker.sock ruudud/devdns --restart always", shell=True, )
+                output = subprocess.check_output("docker run -d -v /var/run/docker.sock:/var/run/docker.sock --name dnsdock -p 172.17.42.1:53:53/udp tonistiigi/dnsdock", shell=True, )
             except:
-                output = subprocess.check_output("docker run ruudud/devdns -d -p 53:53/udp -v /var/run/docker.sock:/var/run/docker.sock --restart always", shell=True, )
+                    output = subprocess.check_output("docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 172.17.42.1:53:53/udp tonistiigi/dnsdock", shell=True, )
 
         if "docker-cleanup" not in running:
             # Old image cleanup
