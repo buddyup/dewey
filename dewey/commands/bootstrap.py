@@ -23,7 +23,6 @@ class Command(DeweyCommand):
         #     except:
         #
 
-
         # Dev DNS
         if "dnsdock" not in running:
             try:
@@ -31,12 +30,12 @@ class Command(DeweyCommand):
             except:
                     output = subprocess.check_output("docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 172.17.0.1:53:53/udp tonistiigi/dnsdock", shell=True, )
 
-        if "docker-cleanup" not in running:
-            # Old image cleanup
-            try:
-                output = subprocess.check_output("docker run -d --name cleanup --restart always -v /var/run/docker.sock:/var/run/docker.sock:rw -v /var/lib/docker:/var/lib/docker:rw meltwater/docker-cleanup:latest ", shell=True, )
-            except:
-                output = subprocess.check_output("docker run meltwater/docker-cleanup:latest -d --restart always -v /var/run/docker.sock:/var/run/docker.sock:rw -v /var/lib/docker:/var/lib/docker:rw", shell=True, )        
+        # if "docker-cleanup" not in running:
+        #     # Old image cleanup
+        #     try:
+        #         output = subprocess.check_output("docker run -d --name cleanup --restart always -v /var/run/docker.sock:/var/run/docker.sock:rw -v /var/lib/docker:/var/lib/docker:rw meltwater/docker-cleanup:latest ", shell=True, )
+        #     except:
+        #         output = subprocess.check_output("docker run meltwater/docker-cleanup:latest -d --restart always -v /var/run/docker.sock:/var/run/docker.sock:rw -v /var/lib/docker:/var/lib/docker:rw", shell=True, )        
 
         # Get the latest boot2docker
         # output = subprocess.check_call("docker-machine upgrade default", shell=True, )
