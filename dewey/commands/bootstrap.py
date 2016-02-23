@@ -8,13 +8,12 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        return "boot2docker init REMOVE_SHARED_FOLDERS && boot2docker start --vbox-share=disable REMOVE_SHARED_FOLDERS"
-        pass
+        return "boot2docker init && boot2docker start --vbox-share=disable"
 
     def run_command(self, *args, **kwargs):
         # # Base OSX Dev
         # output = subprocess.check_output("docker-osx-dev", shell=True, )
-        running = subprocess.check_output("docker ps", shell=True)
+        # running = subprocess.check_output("docker ps", shell=True)
 
         # Dev DNS
         # if "ruudud/devdns" not in running:
@@ -24,11 +23,11 @@ class Command(DeweyCommand):
         #
 
         # Dev DNS
-        if "dnsdock" not in running:
-            try:
-                output = subprocess.check_output("docker run -d -v /var/run/docker.sock:/var/run/docker.sock --name dnsdock -p 172.17.0.1:53:53/udp tonistiigi/dnsdock", shell=True, )
-            except:
-                    output = subprocess.check_output("docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 172.17.0.1:53:53/udp tonistiigi/dnsdock", shell=True, )
+        # if "dnsdock" not in running:
+        #     try:
+        #         output = subprocess.check_output("docker run -d -v /var/run/docker.sock:/var/run/docker.sock --name dnsdock -p 172.17.0.1:53:53/udp tonistiigi/dnsdock", shell=True, )
+        #     except:
+        #             output = subprocess.check_output("docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 172.17.0.1:53:53/udp tonistiigi/dnsdock", shell=True, )
 
         # if "docker-cleanup" not in running:
         #     # Old image cleanup
