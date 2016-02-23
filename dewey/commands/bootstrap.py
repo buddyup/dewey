@@ -39,6 +39,9 @@ class Command(DeweyCommand):
         # Get the latest boot2docker
         # output = subprocess.check_call("docker-machine upgrade default", shell=True, )
 
+        # Syncdb
+        output = subprocess.check_output("docker run web bash -c 'cd api; python3 manage.py syncdb'", shell=True, )
+
         print("Ready for development")
 
     def post_default(self, *args, **kwargs):
