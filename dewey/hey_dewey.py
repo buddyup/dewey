@@ -13,6 +13,7 @@ Usage:
   dewey pull
   dewey restart
   dewey bash
+  dewey syncdb
 
 Options:
   -h --help     Show this screen.
