@@ -8,7 +8,7 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        return "boot2docker init && boot2docker start --vbox-share=disable"
+        return "boot2docker restart && boot2docker init && boot2docker start --vbox-share=disable"
 
     def run_command(self, *args, **kwargs):
         # # Base OSX Dev
@@ -28,12 +28,6 @@ class Command(DeweyCommand):
                 output = subprocess.check_output("docker run -d -v /var/run/docker.sock:/var/run/docker.sock --name dnsdock -p 172.17.0.1:53:53/udp tonistiigi/dnsdock", shell=True, )
             except:
                 output = subprocess.check_output("docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 172.17.0.1:53:53/udp tonistiigi/dnsdock", shell=True, )
-
-        if "postgresdbdata" not in running:
-            try:
-                output = subprocess.check_output("docker run --name postgresdbdata postgresdb echo 'Postgres data container'", shell=True, )
-            except:
-                output = subprocess.check_output("docker run postgresdb echo 'Postgres data container'", shell=True, )
 
         # if "docker-cleanup" not in running:
         #     # Old image cleanup
