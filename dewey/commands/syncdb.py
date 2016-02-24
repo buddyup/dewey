@@ -9,7 +9,7 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        return "docker-compose run db bash -c 'createdb -h db -U postgres buddyup'"
+        return "docker-compose run db \"bash -c 'createdb -h db -U postgres buddyup'\""
 
     def run_command(self, *args, **kwargs):
         pass
