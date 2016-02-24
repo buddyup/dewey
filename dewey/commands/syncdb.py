@@ -9,7 +9,7 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        return "docker-compose run web bash -c 'cd api; python3 manage.py migrate'"
+        return "docker-compose run web \"bash -c 'cd api; python3 manage.py migrate'\""
 
     def run_command(self, *args, **kwargs):
         pass
