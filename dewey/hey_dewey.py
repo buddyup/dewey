@@ -14,6 +14,8 @@ Usage:
   dewey bash
   dewey syncdb
   dewey test
+  dewey build
+  dewey init
 
 Options:
   -h --help     Show this screen.
