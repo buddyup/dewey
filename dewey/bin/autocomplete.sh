@@ -1,4 +1,4 @@
-
+#!/usr/bin/env bash
 _hey_dewey()
 {
     local cur

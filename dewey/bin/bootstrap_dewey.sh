@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 cd ~
 docopt-completion hey_dewey --manual-bash > /dev/null
 if [ ! -f ./hey_dewey.sh ]; then
