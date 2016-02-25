@@ -2,20 +2,20 @@
 """Dewey, our friendly CLI friend!
 
 Usage:
-  dewey workon
+  dewey workon      Change to the buddyup working directory
   dewey (checkout | co) <branch_name>
   dewey (new-branch | nb) <branch_name>
-  dewey bootstrap   # Start up docker and file sync
-  dewey up          # Start the dev machines
-  dewey pull        # Pull the latest docker image.
-  dewey restart     # Restart docker
-  dewey bash        # SSH into the main docker container
-  dewey syncdb      # Run django syncdb
-  dewey test        # Run all tests
-  dewey build       # Build for native devices
-  dewey init        # Initialize docker for first setup
-  dewey hi          # Say hello
-  dewey upgrade     # Upgrade dewey
+  dewey bootstrap   Start up docker and file sync
+  dewey up          Start the dev machines
+  dewey pull        Pull the latest docker image.
+  dewey restart     Restart docker
+  dewey bash        SSH into the main docker container
+  dewey syncdb      Run django syncdb
+  dewey test        Run all tests
+  dewey build       Build for native devices
+  dewey init        Initialize docker for first setup
+  dewey hi          Say hello
+  dewey upgrade     Upgrade dewey
 
 Options:
   -h --help     Show this screen.
