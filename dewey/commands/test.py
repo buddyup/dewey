@@ -1,9 +1,15 @@
+import subprocess
+from clint.textui import puts, indent, colored
+
 from .base import DeweyCommand
+from dewey.util import suppress_stdout_stderr
+
+
 
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        return "cd ~/buddyup/core.git"
+        return 'docker-compose run db bash -c "cd app; pt'
 
     def run_command(self, *args, **kwargs):
         pass

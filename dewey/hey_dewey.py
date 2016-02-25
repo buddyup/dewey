@@ -5,7 +5,6 @@ Usage:
   dewey workon <project_name>
   dewey (checkout | co) <branch_name>
   dewey (new-branch | nb) <branch_name>
-  dewey pep8
   dewey hi
   dewey up
   dewey upgrade
@@ -14,6 +13,7 @@ Usage:
   dewey restart
   dewey bash
   dewey syncdb
+  dewey test
 
 Options:
   -h --help     Show this screen.
