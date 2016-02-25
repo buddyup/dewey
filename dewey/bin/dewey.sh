@@ -1,3 +1,3 @@
-eval $(hey_dewey --pre $@)
+source <(hey_dewey --pre $@)
 hey_dewey $@
-eval $(hey_dewey --post $@)
+source <(hey_dewey --post $@)
