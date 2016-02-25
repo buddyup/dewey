@@ -2,6 +2,30 @@
 """Dewey, our friendly CLI friend!
 
 Usage:
+  dewey workon
+  dewey (checkout | co) <branch_name>
+  dewey (new-branch | nb) <branch_name>
+  dewey bootstrap
+  dewey up
+  dewey pull
+  dewey restart
+  dewey bash
+  dewey syncdb
+  dewey test
+  dewey build
+  dewey init
+  dewey hi
+  dewey upgrade
+
+Options:
+  -h --help     Show this screen.
+  --version     Show version.
+
+Hidden commands for scripts:
+  --pre         Output the pre-command scripts for execution.
+  --post        Output the post-command scripts for execution.
+
+Usage:
   dewey workon      Change to the buddyup working directory
   dewey (checkout | co) <branch_name>
   dewey (new-branch | nb) <branch_name>
@@ -16,14 +40,6 @@ Usage:
   dewey init        Initialize docker for first setup
   dewey hi          Say hello
   dewey upgrade     Upgrade dewey
-
-Options:
-  -h --help     Show this screen.
-  --version     Show version.
-
-Hidden commands for scripts:
-  --pre         Output the pre-command scripts for execution.
-  --post        Output the post-command scripts for execution.
 
 """
 import os
