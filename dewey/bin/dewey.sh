@@ -1,3 +1,3 @@
-`hey_dewey --pre $@`
+eval $(hey_dewey --pre $@)
 hey_dewey $@
-`hey_dewey --post $@`
+eval $(hey_dewey --post $@)
