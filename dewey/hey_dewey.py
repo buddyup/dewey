@@ -25,7 +25,7 @@ Hidden commands for scripts:
   --pre         Output the pre-command scripts for execution.
   --post        Output the post-command scripts for execution.
 
-Usage:
+Details of use:
   dewey workon      Change to the buddyup working directory
   dewey (checkout | co) <branch_name>
   dewey (new-branch | nb) <branch_name>
