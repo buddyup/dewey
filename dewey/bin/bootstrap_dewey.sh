@@ -17,9 +17,9 @@ echo "complete -F _hey_dewey d" >> .dewey_autocomplete.sh
 source .dewey_autocomplete.sh
 
 function _run_dewey() {
-    `hey_dewey --pre $@`;
+    eval "$(hey_dewey --pre $@)";
     hey_dewey $@;
-    `hey_dewey --post $@`;
+    eval "$(hey_dewey --post $@)";
 }
 
 alias d="_run_dewey"

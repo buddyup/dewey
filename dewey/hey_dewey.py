@@ -49,6 +49,7 @@ from docopt import docopt
 from dewey import VERSION
 from dewey.util import suppress_stdout_stderr
 
+
 def main():
     # Handle pre/post handlers
     run_pre = False
@@ -80,10 +81,10 @@ def main():
         arguments = docopt(__doc__, version='Dewey %s' % VERSION)
 
     for arg_name, value in arguments.iteritems():
-        if value == True:
+        if value is True:
             arg_name = arg_name.replace("-", "_")
             try:
-                command_module = __import__("dewey.commands.%s" % arg_name, fromlist=['Command']) 
+                command_module = __import__("dewey.commands.%s" % arg_name, fromlist=['Command'])
                 cmd = getattr(command_module, 'Command')()
                 cmd.set_platform(platform)
                 if run_pre:
@@ -94,7 +95,8 @@ def main():
                     cmd.run_command(**arguments)
             except:
                 if not run_pre and not run_post:
-                    import traceback; traceback.print_exc();
+                    import traceback
+                    traceback.print_exc()
                     print "Unable to find a command module for %s" % arg_name
 
 
