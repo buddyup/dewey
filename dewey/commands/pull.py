@@ -9,7 +9,7 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        return "docker pull buddyup/core:dev"
+        return "docker pull buddyup/core:latest"
 
     def run_command(self, *args, **kwargs):
         pass
