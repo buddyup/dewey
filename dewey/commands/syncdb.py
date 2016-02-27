@@ -15,4 +15,4 @@ class Command(DeweyCommand):
         pass
 
     def post_default(self, *args, **kwargs):
-        return 'docker-compose --project-name bu run web bash -c "cd api; python3 manage.py migrate"'
+        return 'docker-compose --project-name bu run web bash -c "cd /code/app/api; python3 manage.py migrate"'
