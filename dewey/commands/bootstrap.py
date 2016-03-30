@@ -13,10 +13,10 @@ class Command(DeweyCommand):
     def run_command(self, *args, **kwargs):
         # # Base OSX Dev
         # output = subprocess.check_output("docker-osx-dev", shell=True, )
-        try:
-            running = subprocess.check_output("docker ps", shell=True)
-        except:
-            running = subprocess.check_output("docker ps", shell=True)
+        # try:
+        #     running = subprocess.check_output("docker ps", shell=True)
+        # except:
+        #     running = subprocess.check_output("docker ps", shell=True)
 
         # Dev DNS
         # if "ruudud/devdns" not in running:

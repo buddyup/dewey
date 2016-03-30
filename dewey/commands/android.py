@@ -9,7 +9,7 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        return "docker-compose --project-name bu up --no-recreate"
+        return 'cd app; gulp android"'
 
     def run_command(self, *args, **kwargs):
         pass

@@ -10,9 +10,11 @@ Usage:
   dewey pull
   dewey restart
   dewey bash
+  dewey build
+  dewey android
+  dewey ios
   dewey syncdb
   dewey test
-  dewey build
   dewey init
   dewey hi
   dewey upgrade
@@ -34,9 +36,11 @@ Details of use:
   dewey pull        Pull the latest docker image.
   dewey restart     Restart docker
   dewey bash        SSH into the main docker container
+  dewey build       Build for native devices
+  dewey android     Run the latest build on android
+  dewey ios         Run the latest build on ios
   dewey syncdb      Run django syncdb
   dewey test        Run all tests
-  dewey build       Build for native devices
   dewey init        Initialize docker for first setup
   dewey hi          Say hello
   dewey upgrade     Upgrade dewey
