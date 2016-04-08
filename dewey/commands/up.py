@@ -9,11 +9,11 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        return "npm run watch"
+        # return "npm run watch"
+        pass
 
     def run_command(self, *args, **kwargs):
-        pass
+        output = subprocess.call("npm run watch", shell=True,)
 
     def post_default(self, *args, **kwargs):
-        pass
-        # return "open http://localhost:8080"
+        return "open http://localhost:8080"
