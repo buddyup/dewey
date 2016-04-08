@@ -13,7 +13,7 @@ class Command(DeweyCommand):
         pass
 
     def run_command(self, *args, **kwargs):
-        output = subprocess.call("open http://localhost:8080", shell=True,)
+        output = subprocess.call("sleep 5; open http://localhost:8080", shell=True,)
         output = subprocess.call("npm run watch", shell=True,)
 
     def post_default(self, *args, **kwargs):
