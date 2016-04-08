@@ -8,6 +8,10 @@ from dewey.util import suppress_stdout_stderr
 
 class Command(DeweyCommand):
 
+    def __init__(self, *args, **kwargs):
+        super(Command, self).__init__(*args, **kwargs)
+        self.run_android = True
+
     def pre_default(self, *args, **kwargs):
         pass
 
@@ -16,8 +20,6 @@ class Command(DeweyCommand):
         if "device usb" not in output:
             print "No android device connected via USB or in Genymotion.  Stopping."
             self.run_android = False
-        else:
-            self.run_android = True
 
 
     def post_default(self, *args, **kwargs):
