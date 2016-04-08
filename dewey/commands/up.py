@@ -15,4 +15,4 @@ class Command(DeweyCommand):
         pass
 
     def post_default(self, *args, **kwargs):
-        pass
+        return "open http://localhost:8080"
