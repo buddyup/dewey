@@ -8,7 +8,7 @@ class Command(DeweyCommand):
         pass
 
     def run_command(self, *args, **kwargs):
-        print("Upgrading dewey...",)
+        print "Upgrading dewey...",
         with suppress_stdout_stderr():
             try:
                 output = subprocess.check_output("pip install git+https://git@github.com/buddyup/dewey.git#egg=dewey --upgrade", shell=True, )
