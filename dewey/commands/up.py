@@ -27,7 +27,7 @@ class Command(DeweyCommand):
                 sys.stdout.write(line)
                 sys.stdout.flush()
         except KeyboardInterrupt:
-            print "Shutting down."
+            print "\n\nShutting down."
 
     def post_default(self, *args, **kwargs):
         pass
