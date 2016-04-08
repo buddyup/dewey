@@ -1,3 +1,4 @@
+import sys
 import subprocess
 from clint.textui import puts, indent, colored
 
@@ -14,8 +15,7 @@ class Command(DeweyCommand):
         output = subprocess.check_output("adb devices -l", shell=True, )
         if "device usb" not in output:
             print "No android device connected via USB or in Genymotion.  "
-            raise Exception("Stopping.")
-
+            sys.exit(1)
 
     def post_default(self, *args, **kwargs):
         return "npm run android"
