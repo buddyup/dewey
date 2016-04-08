@@ -14,7 +14,6 @@ class Command(DeweyCommand):
 
     def run_command(self, *args, **kwargs):
         output = subprocess.call("sleep 5; open http://localhost:8080", shell=True,)
-        output = subprocess.call("npm run watch", shell=True,)
 
     def post_default(self, *args, **kwargs):
-        pass
+        return "npm run watch"
