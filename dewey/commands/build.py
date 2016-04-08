@@ -9,10 +9,10 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        return 'npm run build'
+        pass
 
     def run_command(self, *args, **kwargs):
         pass
 
     def post_default(self, *args, **kwargs):
-        pass
+        return 'npm run build'

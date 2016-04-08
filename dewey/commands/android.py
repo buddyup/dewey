@@ -12,10 +12,14 @@ class Command(DeweyCommand):
         pass
 
     def run_command(self, *args, **kwargs):
-        output = subprocess.check_output("adb devices -l", shell=True, )
-        if "device usb" not in output:
-            print "No android device connected via USB or in Genymotion.  "
-            sys.exit(1)
+        try:
+            output = subprocess.check_output("adb devices -l", shell=True, )
+            if "device usb" not in output:
+                print "No android device connected via USB or in Genymotion.  "
+            else:
+                subprocess.call("npm run android", shell=True)
+        except KeyboardInterrupt:
+            print "\n\nShutting down."
 
     def post_default(self, *args, **kwargs):
-        return "npm run android"
+        pass
