@@ -13,6 +13,7 @@ Usage:
   dewey build
   dewey android
   dewey ios
+  dewey dev-setup
   dewey syncdb
   dewey test
   dewey init
@@ -39,6 +40,7 @@ Details of use:
   dewey build       Build for native devices
   dewey android     Run the latest build on android
   dewey ios         Run the latest build on ios
+  dewey dev-setup   Update the system developer libraries
   dewey syncdb      Run django syncdb
   dewey test        Run all tests
   dewey init        Initialize docker for first setup
