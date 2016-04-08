@@ -17,6 +17,7 @@ class Command(DeweyCommand):
             if "device usb" not in output:
                 print "No android device connected via USB or in Genymotion.  "
             else:
+                print "Device found.  Building...\n"
                 subprocess.call("npm run android", shell=True)
         except KeyboardInterrupt:
             print "\n\nShutting down."
