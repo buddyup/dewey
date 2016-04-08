@@ -21,11 +21,11 @@ class Command(DeweyCommand):
             )
             while ps.poll() is None:
                 out = ps.stdout.read(1)
-                sys.stdout.write(out)
-                sys.stdout.flush()
                 if "bundle is now VALID" in out:
                     print "Bundling done.  Launching browser."
                     subprocess.check_output("open http://localhost:8080", shell=True,)
+                sys.stdout.write(out)
+                sys.stdout.flush()
         except KeyboardInterrupt:
             print "Shutting down."
 
