@@ -43,8 +43,8 @@ class Command(DeweyCommand):
         # output = subprocess.check_call("docker-machine upgrade default", shell=True, )
 
         # Syncdb
-
         print("Ready for development")
 
     def post_default(self, *args, **kwargs):
-        return "docker-osx-dev -e .git -e bower_components -e node_modules -e source -e *.pyc -e app/frontends/app/dist -e app/frontends/app/build -e app/frontends/marketing/dist -e app/frontends/marketing/build -e docker/postgres"
+        return "cd ~/buddyup/core; docker-compose --project-name bu up --no-recreate"
+        # return "docker-osx-dev -e .git -e bower_components -e node_modules -e source -e *.pyc -e app/frontends/app/dist -e app/frontends/app/build -e app/frontends/marketing/dist -e app/frontends/marketing/build -e docker/postgres"

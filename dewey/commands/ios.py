@@ -9,7 +9,7 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        return 'cd app; gulp ios'
+        return 'npm run ios'
 
     def run_command(self, *args, **kwargs):
         pass

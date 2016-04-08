@@ -9,10 +9,17 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        return 'cd app; gulp android'
+        pass
 
     def run_command(self, *args, **kwargs):
-        pass
+        output = subprocess.check_output("adb devices -l", shell=True, )
+        if "device usb" not in output:
+            print "No android device connected via USB or in Genymotion.  Stopping."
+            self.run_android = False
+        else:
+            self.run_android = True
+
 
     def post_default(self, *args, **kwargs):
-        pass
+        if self.run_android:
+            return "npm run android"
