@@ -10,7 +10,7 @@ class Command(DeweyCommand):
     def run_command(self, *args, **kwargs):
             try:
                 with suppress_stdout_stderr():
-                    output = subprocess.check_output("pip install git+https://git@github.com/buddyup/dewey.git#egg=dewey --upgrade", shell=True,)
+                    output = subprocess.check_output("pip2 install git+https://git@github.com/buddyup/dewey.git#egg=dewey --upgrade", shell=True,)
                 print("complete.")
             except subprocess.CalledProcessError as grepexc:                                                                                                   
                 print("\nError upgrading dewey. \n%s" % (grepexc.output,))
