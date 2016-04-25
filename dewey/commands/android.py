@@ -18,8 +18,7 @@ class Command(DeweyCommand):
                 print "No android device connected via USB or in Genymotion.  "
             else:
                 print "Device found.  Building...\n"
-                subprocess.check_call("ionic run android", cwd="app/native/ionic",
-                    shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                subprocess.call("ionic run android", cwd="app/native/ionic", shell=True)
         except KeyboardInterrupt:
             print "\n\nShutting down."
 

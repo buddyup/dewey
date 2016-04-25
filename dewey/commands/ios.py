@@ -12,8 +12,8 @@ class Command(DeweyCommand):
         pass
 
     def run_command(self, *args, **kwargs):
-        subprocess.check_call("ionic run ios", cwd="app/native/ionic",
-            shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        print("Building for iOS...")
+        subprocess.call("ionic run ios", cwd="app/native/ionic", shell=True)
 
     def post_default(self, *args, **kwargs):
         pass
