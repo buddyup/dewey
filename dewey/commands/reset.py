@@ -12,6 +12,9 @@ class Command(DeweyCommand):
         pass
 
     def run_command(self, *args, **kwargs):
+        subprocess.call("rm -rf node_modules", cwd="app", shell=True)
+        subprocess.call("rm -rf bower_components", cwd="app", shell=True)
+        subprocess.call("npm cache clean", cwd="app", shell=True)
         subprocess.call("npm install", cwd="app", shell=True)
         subprocess.call("bower install", cwd="app", shell=True)
         subprocess.call("ionic state reset", cwd="app/native/ionic", shell=True)

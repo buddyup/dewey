@@ -21,6 +21,9 @@ class Command(DeweyCommand):
             )
             while ps.poll() is None:
                 line = ps.stdout.readline()
+                if "[BS] Serving files from: frontends/groundcontrol/build/web" in line:
+                    print "Bootstrapping done.  Launching browser."
+                    subprocess.check_output("open http://localhost:8111", shell=True,)
                 sys.stdout.write(line)
                 sys.stdout.flush()
         except KeyboardInterrupt:
