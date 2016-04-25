@@ -10,14 +10,13 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        # return "npm run watch"
         pass
 
 
     def run_command(self, *args, **kwargs):
         try:
             ps = subprocess.Popen(
-                "gulp dev",
+                "cd app; gulp dev",
                 close_fds=True, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
             )
             while ps.poll() is None:
