@@ -14,7 +14,7 @@ Usage:
   dewey android
   dewey ios
   dewey dev-setup
-  dewey native-reset
+  dewey reset
   dewey syncdb
   dewey test
   dewey init
@@ -42,7 +42,7 @@ Details of use:
   dewey android     Run the latest build on android
   dewey ios         Run the latest build on ios
   dewey dev-setup   Update the system developer libraries
-  dewey native-resetUpdate all ionic packages and plugins
+  dewey reset       Update npm, bower, and all ionic packages and plugins
   dewey syncdb      Run django syncdb
   dewey test        Run all tests
   dewey init        Initialize docker for first setup
