@@ -10,7 +10,7 @@ class Command(DeweyCommand):
 
     def print_section(self, message):
         print("=" * (len(message) + 4))
-        print("= %s =" % message)
+        print("  %s  " % message)
         print("=" * (len(message) + 4))
 
 
