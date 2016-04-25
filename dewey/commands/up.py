@@ -16,8 +16,9 @@ class Command(DeweyCommand):
     def run_command(self, *args, **kwargs):
         try:
             ps = subprocess.Popen(
-                "cd app; gulp dev",
-                close_fds=True, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+                "gulp dev",
+                close_fds=True, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                cwd="app"
             )
             while ps.poll() is None:
                 line = ps.stdout.readline()
