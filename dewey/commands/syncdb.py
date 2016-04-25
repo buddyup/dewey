@@ -10,9 +10,10 @@ class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
         return 'docker-compose --project-name bu run db bash -c "createdb -h db -U postgres buddyup"'
+        # return 'docker-compose --project-name bu run db bash -c "createdb -h db -U postgres buddyup"'
 
     def run_command(self, *args, **kwargs):
         pass
 
     def post_default(self, *args, **kwargs):
-        return 'docker-compose --project-name bu run web bash -c "cd /code/app/api; python3 manage.py migrate"'
+        return 'cd app/api; python manage.py migrate'

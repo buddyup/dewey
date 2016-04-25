@@ -13,7 +13,22 @@ class Command(DeweyCommand):
         # return "npm run watch"
         pass
 
+
     def run_command(self, *args, **kwargs):
+        try:
+            ps = subprocess.Popen(
+                "gulp dev",
+                close_fds=True, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+            )
+            while ps.poll() is None:
+                line = ps.stdout.readline()
+                sys.stdout.write(line)
+                sys.stdout.flush()
+        except KeyboardInterrupt:
+            print "\n\nShutting down."
+
+
+    def run_command_oliver(self, *args, **kwargs):
         try:
             ps = subprocess.Popen(
                 "npm run watch",

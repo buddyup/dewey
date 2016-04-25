@@ -8,7 +8,8 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
-        return "echo 'Bootstrapping...\n' && boot2docker restart && sleep 2 && boot2docker init && boot2docker start --vbox-share=disable"
+        # return "echo 'Bootstrapping...\n' && boot2docker restart && sleep 2 && boot2docker init && boot2docker start --vbox-share=disable"
+        pass
 
     def run_command(self, *args, **kwargs):
         # # Base OSX Dev
@@ -46,5 +47,7 @@ class Command(DeweyCommand):
         print("Ready for development")
 
     def post_default(self, *args, **kwargs):
-        return "cd ~/buddyup/core; docker-compose --project-name bu up --no-recreate"
+        # return "cd ~/buddyup/core; docker-compose --project-name bu up --no-recreate"
         # return "docker-osx-dev -e .git -e bower_components -e node_modules -e source -e *.pyc -e app/frontends/app/dist -e app/frontends/app/build -e app/frontends/marketing/dist -e app/frontends/marketing/build -e docker/postgres"
+        # return "cd app/api; python manage.py"
+        pass
