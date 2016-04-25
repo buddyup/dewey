@@ -9,9 +9,9 @@ from dewey.util import suppress_stdout_stderr
 class Command(DeweyCommand):
 
     def print_section(self, message):
-        print("=" * len(message))
-        print(message)
-        print("=" * len(message))
+        print("=" * (len(message) + 4))
+        print("= %s =" % message)
+        print("=" * (len(message) + 4))
 
 
     def pre_default(self, *args, **kwargs):
