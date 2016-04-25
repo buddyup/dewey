@@ -12,7 +12,8 @@ class Command(DeweyCommand):
         pass
 
     def run_command(self, *args, **kwargs):
-        subprocess.check_output("ionic state reset", cwd="app/native/ionic", shell=True)
+        subprocess.check_call("ionic state reset", cwd="app/native/ionic",
+            shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     def post_default(self, *args, **kwargs):
         pass
