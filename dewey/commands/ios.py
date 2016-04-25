@@ -14,6 +14,7 @@ class Command(DeweyCommand):
     def run_command(self, *args, **kwargs):
         print("Building for iOS...")
         subprocess.call("ionic run ios", cwd="app/native/ionic", shell=True)
+        subprocess.call("open app/native/ionic/platforms/ios/BuddyUp.xcodeproj", shell=True)
 
     def post_default(self, *args, **kwargs):
         pass
