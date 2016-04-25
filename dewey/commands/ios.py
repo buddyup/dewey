@@ -15,4 +15,4 @@ class Command(DeweyCommand):
         pass
 
     def post_default(self, *args, **kwargs):
-        return 'cd native/ionic; ionic run ios'
+        return 'cd app/native/ionic; ionic run ios'
