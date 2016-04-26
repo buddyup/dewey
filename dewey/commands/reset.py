@@ -6,7 +6,6 @@ from .base import DeweyCommand
 from dewey.util import suppress_stdout_stderr
 
 
-
 class Command(DeweyCommand):
 
     def print_section(self, message):
@@ -14,14 +13,13 @@ class Command(DeweyCommand):
         print("  %s  " % message)
         print("=" * (len(message) + 4))
 
-
     def pre_default(self, *args, **kwargs):
         pass
 
     def run_command(self, *args, **kwargs):
         print("Resetting libraries and native components")
 
-        self.print_section("Updating global libs")
+        self.print_section("Updating global libraries")
         subprocess.call("npm install -g ionic", shell=True)
 
         self.print_section("Clearing NPM and Bower")

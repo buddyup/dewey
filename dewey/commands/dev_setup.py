@@ -5,7 +5,6 @@ from .base import DeweyCommand
 from dewey.util import suppress_stdout_stderr
 
 
-
 class Command(DeweyCommand):
 
     def pre_default(self, *args, **kwargs):
