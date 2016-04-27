@@ -37,17 +37,6 @@ class Command(DeweyCommand):
         if not os.path.isfile("postactivate"):
             subprocess.call("cp ~/.virtualenvs/buddyup-core/bin/postactivate postactivate", shell=True)
 
-        self.print_section("Clearing virtualenv")
-        subprocess.call("rmvirtualenv buddyup-core", shell=True)
-        subprocess.call("mkvirtualenv buddyup-core -p `which python3`", shell=True)
-
-        self.print_section("Setting up postactivate")
-        subprocess.call("rm ~/.virtualenvs/buddyup-core/bin/postactivate", shell=True)
-        subprocess.call("ln -s postactivate ~/.virtualenvs/buddyup-core/bin/postactivate", shell=True)
-
-        self.print_section("Installing Python Libraries")
-        subprocess.call("workon buddyup-core; pip install requirements.txt", shell=True)
-
         self.print_section("Resetting Ionic App")
         subprocess.call("ionic state reset", cwd="app/native/ionic", shell=True)
 
@@ -56,4 +45,15 @@ class Command(DeweyCommand):
         print("Reset complete.")
 
     def post_default(self, *args, **kwargs):
-        return "workon buddyup-core"
+        print("unset PYTHONPATH")
+        print("echo 'Clearing virtualenv'")
+        print("rmvirtualenv buddyup-core")
+        print("mkvirtualenv buddyup-core -p `which python3`")
+
+        print("echo 'Setting up postactivate'")
+        print("rm ~/.virtualenvs/buddyup-core/bin/postactivate")
+        print("ln -s ~/buddyup/core/postactivate ~/.virtualenvs/buddyup-core/bin/postactivate")
+        print("workon buddyup-core")
+
+        print("echo 'Installing Python Libraries'")
+        print("workon buddyup-core; pip install -r requirements.txt")
