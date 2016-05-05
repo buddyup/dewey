@@ -20,7 +20,7 @@ class Command(DeweyCommand):
         print("Resetting libraries and native components")
 
         self.print_section("Updating global libraries")
-        subprocess.call("npm install -g ionic", shell=True)
+        subprocess.call("npm install -g ionic cordova", shell=True)
 
         self.print_section("Clearing NPM and Bower")
         subprocess.call("rm -rf node_modules", cwd="app", shell=True)
