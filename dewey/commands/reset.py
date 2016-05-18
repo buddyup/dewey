@@ -33,16 +33,24 @@ class Command(DeweyCommand):
 
         self.print_section("Linking node_modules")
         subprocess.call("ln -s node_modules ../node_modules", cwd="app", shell=True)
+        subprocess.call("rm ../package.json", cwd="app", shell=True)
+        subprocess.call("ln -s package.json ../package.json", cwd="app", shell=True)
         subprocess.call("rm -rf native/ionic/node_modules", cwd="app", shell=True)
         subprocess.call("ln -s node_modules native/ionic/node_modules", cwd="app", shell=True)
+        subprocess.call("rm native/ionic/package.json", cwd="app", shell=True)
+        subprocess.call("ln -s package.json native/ionic/package.json", cwd="app", shell=True)
 
         self.print_section("Installing Bower Libraries")
         subprocess.call("bower install", cwd="app", shell=True)
 
         self.print_section("Linking Bower Components")
         subprocess.call("ln -s bower_components ../bower_components", cwd="app", shell=True)
+        subprocess.call("rm ../bower.json", cwd="app", shell=True)
+        subprocess.call("ln -s bower.json ../bower.json", cwd="app", shell=True)
         subprocess.call("rm -rf native/ionic/bower_components", cwd="app", shell=True)
         subprocess.call("ln -s bower_components native/ionic/bower_components", cwd="app", shell=True)
+        subprocess.call("rm native/ionic/bower.json", cwd="app", shell=True)
+        subprocess.call("ln -s bower.json native/ionic/bower.json", cwd="app", shell=True)
 
         self.print_section("Backing up postactivate")
         if not os.path.isfile("postactivate"):
