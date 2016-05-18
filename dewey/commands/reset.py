@@ -30,8 +30,18 @@ class Command(DeweyCommand):
         self.print_section("Installing NPM Libraries")
         subprocess.call("npm install", cwd="app", shell=True)
 
+        self.print_section("Linking node_modules")
+        subprocess.call("ln -s node_modules ../node_modules", cwd="app", shell=True)
+        subprocess.call("rm -rf native/ionic/node_modules", cwd="app", shell=True)
+        subprocess.call("ln -s node_modules native/ionic/node_modules", cwd="app", shell=True)
+
         self.print_section("Installing Bower Libraries")
         subprocess.call("bower install", cwd="app", shell=True)
+
+        self.print_section("Linking Bower Components")
+        subprocess.call("ln -s bower_components ../bower_components", cwd="app", shell=True)
+        subprocess.call("rm -rf native/ionic/bower_components", cwd="app", shell=True)
+        subprocess.call("ln -s bower_components native/ionic/bower_components", cwd="app", shell=True)
 
         self.print_section("Backing up postactivate")
         if not os.path.isfile("postactivate"):
