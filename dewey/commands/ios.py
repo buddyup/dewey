@@ -16,6 +16,7 @@ class Command(DeweyCommand):
         subprocess.call("gulp native_build", cwd="app", shell=True)
         subprocess.call("ionic build ios", cwd="app/native/ionic", shell=True)
         subprocess.call("open app/native/ionic/platforms/ios/BuddyUp.xcodeproj", shell=True)
+        subprocess.check_output("say iOS build is done", shell=True, )
 
     def post_default(self, *args, **kwargs):
         pass

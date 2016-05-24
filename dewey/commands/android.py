@@ -16,10 +16,12 @@ class Command(DeweyCommand):
             output = subprocess.check_output("adb devices -l", shell=True, )
             if "device usb" not in output:
                 print "No android device connected via USB or in Genymotion.  "
+                output = subprocess.check_output("Say Hmmm.", shell=True, )
             else:
                 print "Device found.  Building...\n"
                 subprocess.call("gulp native_build", cwd="app", shell=True)
                 subprocess.call("ionic run android", cwd="app/native/ionic", shell=True)
+                subprocess.check_output("say Android build is done", shell=True, )
         except KeyboardInterrupt:
             print "\n\nShutting down."
 
