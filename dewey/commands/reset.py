@@ -32,9 +32,9 @@ class Command(DeweyCommand):
         subprocess.call("npm install", cwd="app", shell=True)
 
         self.print_section("Linking node_modules")
-        subprocess.call("ln -s app/node_modules node_modules", , shell=True)
+        subprocess.call("ln -s app/node_modules node_modules", shell=True)
         subprocess.call("rm package.json", shell=True)
-        subprocess.call("ln -s app/package.json package.json", , shell=True)
+        subprocess.call("ln -s app/package.json package.json", shell=True)
         subprocess.call("rm -rf native/ionic/node_modules", cwd="app", shell=True)
         subprocess.call("ln -s node_modules native/ionic/node_modules", cwd="app", shell=True)
         subprocess.call("rm native/ionic/package.json", cwd="app", shell=True)
