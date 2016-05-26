@@ -19,7 +19,7 @@ class Command(DeweyCommand):
                 output = subprocess.check_output("Say Hmmm.", shell=True, )
             else:
                 print "Device found.  Building...\n"
-                subprocess.call("gulp native_build", cwd="app", shell=True)
+                subprocess.call("gulp ionic_build", cwd="app", shell=True)
                 subprocess.call("ionic run android", cwd="app/native/ionic", shell=True)
                 subprocess.check_output("say Android build is done", shell=True, )
         except KeyboardInterrupt:
