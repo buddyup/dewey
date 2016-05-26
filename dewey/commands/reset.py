@@ -32,23 +32,25 @@ class Command(DeweyCommand):
         subprocess.call("npm install", cwd="app", shell=True)
 
         self.print_section("Linking node_modules")
+        subprocess.call("rm -rf node_modules", shell=True)
         subprocess.call("ln -s app/node_modules node_modules", shell=True)
         subprocess.call("rm package.json", shell=True)
         subprocess.call("ln -s app/package.json package.json", shell=True)
         subprocess.call("rm -rf native/ionic/node_modules", cwd="app", shell=True)
-        subprocess.call("ln -s node_modules native/ionic/node_modules", cwd="app", shell=True)
+        subprocess.call("ln -s app/node_modules native/ionic/node_modules", cwd="app", shell=True)
         subprocess.call("rm native/ionic/package.json", cwd="app", shell=True)
-        subprocess.call("ln -s package.json native/ionic/package.json", cwd="app", shell=True)
+        subprocess.call("ln -s app/package.json native/ionic/package.json", cwd="app", shell=True)
 
         self.print_section("Installing Bower Libraries")
         subprocess.call("bower install", cwd="app", shell=True)
 
         self.print_section("Linking Bower Components")
+        subprocess.call("rm -rf bower_components", shell=True)
         subprocess.call("ln -s app/bower_components bower_components", shell=True)
         subprocess.call("rm bower.json", shell=True)
         subprocess.call("ln -s app/bower.json bower.json", shell=True)
         subprocess.call("rm -rf native/ionic/bower_components", cwd="app", shell=True)
-        subprocess.call("ln -s bower_components native/ionic/bower_components", cwd="app", shell=True)
+        subprocess.call("ln -s app/bower_components native/ionic/bower_components", cwd="app", shell=True)
         subprocess.call("rm native/ionic/bower.json", cwd="app", shell=True)
         subprocess.call("ln -s bower.json native/ionic/bower.json", cwd="app", shell=True)
 
