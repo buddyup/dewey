@@ -14,7 +14,7 @@ class Command(DeweyCommand):
         print("=" * (len(message) + 4))
 
     def pre_default(self, *args, **kwargs):
-        pass
+        print("workon buddyup-core")
 
     def run_command(self, *args, **kwargs):
         print("Resetting libraries and native components")
