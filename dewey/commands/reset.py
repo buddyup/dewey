@@ -24,16 +24,16 @@ class Command(DeweyCommand):
         subprocess.call("pip install --upgrade pip", shell=True)
 
         self.print_section("Clearing NPM and Bower")
-        subprocess.call("rm -rf node_modules", cwd="app", shell=True)
-        subprocess.call("rm -rf bower_components", cwd="app", shell=True)
-        subprocess.call("npm cache clean", cwd="app", shell=True)
+        subprocess.call("rm -rf node_modules", shell=True)
+        subprocess.call("rm -rf bower_components", shell=True)
+        subprocess.call("npm cache clean", shell=True)
 
         self.print_section("Installing NPM Libraries")
-        subprocess.call("npm install", cwd="app", shell=True)
+        subprocess.call("npm install", shell=True)
 
         self.print_section("Linking node_modules")
         subprocess.call("rm -rf app/node_modules", shell=True)
-        subprocess.call("ln -s node_modules app/node_modules", shell=True)
+        subprocess.call("ln -s ../node_modules", cwd="app", shell=True)
         subprocess.call("rm app/package.json", shell=True)
         subprocess.call("ln -s ../package.json", cwd="app", shell=True)
         subprocess.call("rm -rf node_modules", cwd="app/native/ionic", shell=True)
@@ -42,7 +42,7 @@ class Command(DeweyCommand):
         subprocess.call("ln -s ../../../package.json", cwd="app/native/ionic", shell=True)
 
         self.print_section("Installing Bower Libraries")
-        subprocess.call("bower install", cwd="app", shell=True)
+        subprocess.call("bower install", shell=True)
 
         self.print_section("Linking Bower Components")
         subprocess.call("rm -rf app/bower_components", shell=True)
