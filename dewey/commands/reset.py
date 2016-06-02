@@ -78,3 +78,4 @@ class Command(DeweyCommand):
 
         print("echo 'Installing Python Libraries'")
         print("workon buddyup-core; pip install -r requirements.txt")
+        print("say Reset done.")
